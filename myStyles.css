@@ -1,0 +1,37 @@
+.form-box {
+    border: 5px solid blue;
+    padding: 1.2em;
+    margin:auto; width: 60%;
+    min-width: 426px ;
+}
+.fieldset-styles {
+    margin: 0.5em 0;
+    display: flex;
+}
+
+.fieldset-legend {
+    color: blue;
+    font-weight: bolder;
+}
+
+.label-section {
+    width: 17%;
+    margin-right: 4%;
+    display: flex;
+    flex-direction: column;
+}
+
+.fields-margin {
+    margin: 0.4em 0;
+    
+}
+
+.input-section {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+}
+.radio-section{
+    display: flex;
+    margin-right: 2em;
+}

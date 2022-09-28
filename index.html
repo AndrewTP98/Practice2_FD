@@ -1,12 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="myStyles.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
-    
+    <form class="form-box">
+        <h1>Reservation Request</h1>
+        <fieldset class="fieldset-styles">
+            <legend class="fieldset-legend">General Information:</legend>
+            <section class="label-section">
+                <label class="fields-margin" for="arrival_date">Arrival date:</label>
+                <label class="fields-margin" for="nights">Nights:</label>
+                <label class="fields-margin" for="adults">Adults:</label>
+                <label class="fields-margin" for="children">children:</label>
+            </section>
+            <section class="input-section" >
+                <input 
+                    class="fields-margin" 
+                    type="date" id="arrival_date" 
+                    name="arrival_date" 
+                    oninvalid="this.setCustomValidity('Arrival date is invalid.')"
+                    oninput="this.setCustomValidity('')"> 
+                        <span id="error"></span>
+                <input 
+                    class="fields-margin" 
+                    type="number" 
+                    id="nights" 
+                    name="nights"
+                    oninvalid="this.setCustomValidity('Nights must be a number.')" 
+                    oninput="this.setCustomValidity('')">
+                <select 
+                    class="fields-margin" 
+                    name="adults" 
+                    id="adults">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                </select>
+                <select 
+                    class="fields-margin" 
+                    name="children" 
+                    id="children">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                </select>
+            </section>
+        </fieldset>
+        <fieldset class="fieldset-styles">
+            <legend class="fieldset-legend">Preferences:</legend>
+            <section class="radio-section">
+                <label for="room_type" style="margin-right: 0.4em;">Room type:</label>
+                <div>
+                    <input type="radio" id="standard" name="room_type" value="Standard" checked>
+                    <label for="standard">Standard</label><br>
+                    <input type="radio" id="business" name="room_type" value="Business">
+                    <label for="business">Business</label><br>
+                    <input type="radio" id="suite" name="room_type" value="Suite">
+                    <label for="suite">Suite</label>
+                </div>
+            </section> 
+            
+            <section class="radio-section">
+                <label for="bed_type" style="margin-right: 0.4em;">Bed type:</label> 
+                <div>   
+                    <input type="radio" id="king" name="bed_type" value="King" checked>
+                    <label for="king">King</label><br>
+                    <input type="radio" id="double_double" name="bed_type" value="Double Double">
+                    <label for="double_double">Double Double</label><br>
+                </div>             
+            </section>
+            <label><input type="checkbox" id="smoking" value="Smoking"> Smoking</label><br>
+                
+                
+                
+                
+        </fieldset>
+        <fieldset class="fieldset-styles">
+            <legend class="fieldset-legend">Contact Information:</legend>
+            <section class="label-section">
+                <label class="fields-margin" for="name">Name:</label>
+                <label class="fields-margin" for="email">Email:</label>
+                <label class="fields-margin" for="phone">Phone:</label>
+            </section>
+
+            <section class="input-section" >
+                <input 
+                    class="fields-margin"
+                    type="text" 
+                    id="name" 
+                    name="name" 
+                    value="" 
+                    required
+                    oninvalid="this.setCustomValidity('Name is required.')"> <!-- oninput="this.setCustomValidity('')"><br> -->
+                
+                <input
+                    class="fields-margin"
+                    type="email" 
+                    id="email" 
+                    name="email" 
+                    value="graceyahoo.com"
+                    oninvalid="this.setCustomValidity('Email address is invalid.')"><!--  oninput="this.setCustomValidity('')"><br> -->
+                
+                <input 
+                    class="fields-margin"
+                    type="text" 
+                    id="phone" 
+                    name="phone" 
+                    value="123-456-789" 
+                    pattern="[0-9]+"
+                    oninvalid="this.setCustomValidity('Phone number is invalid.')"><!-- oninput="this.setCustomValidity('')"><br> -->
+            </section>
+            
+            
+        </fieldset>
+        <br>
+        <input type="submit" value="Submit Reservation" onclick="submit()">
+        <input type="submit" value="Clear">
+      </form>
 </body>
 </html>
