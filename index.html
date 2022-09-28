@@ -23,16 +23,20 @@
                 <input 
                     class="fields-margin" 
                     type="date" id="arrival_date" 
-                    name="arrival_date">
+                    name="arrival_date"
+                    value="2022-09-29"
+                    min="2022-09-29" >
                 <input 
                     class="fields-margin" 
                     type="number" 
                     id="nights" 
-                    name="nights">
+                    name="nights"
+                    min="1">
                 <select 
                     class="fields-margin" 
                     name="adults" 
                     id="adults">
+                    <option value="0">0</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -46,6 +50,7 @@
                     class="fields-margin" 
                     name="children" 
                     id="children">
+                    <option value="0">0</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -95,19 +100,23 @@
                     id="name" 
                     name="name" 
                     value="" 
+                    placeholder="Pepito"
                     required>
                 <input
                     class="fields-margin"
                     type="email" 
                     id="email" 
                     name="email" 
-                    placeholder="example@gmail.com">
+                    value=""
+                    placeholder="graceyahoo.com">
                 <input 
                     type="tel" 
                     id="phone" 
                     name="phone" 
                     pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
-                    required>
+                    required
+                    value=""
+                    placeholder="74701750">
             </section>
         </fieldset>
         <br>
