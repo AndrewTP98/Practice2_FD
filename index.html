@@ -18,21 +18,16 @@
                 <label class="fields-margin" for="adults">Adults:</label>
                 <label class="fields-margin" for="children">children:</label>
             </section>
-            <section class="input-section" >
+            <section class="input-section">
                 <input 
                     class="fields-margin" 
                     type="date" id="arrival_date" 
-                    name="arrival_date" 
-                    oninvalid="this.setCustomValidity('Arrival date is invalid.')"
-                    oninput="this.setCustomValidity('')"> 
-                        <span id="error"></span>
+                    name="arrival_date">
                 <input 
                     class="fields-margin" 
                     type="number" 
                     id="nights" 
-                    name="nights"
-                    oninvalid="this.setCustomValidity('Nights must be a number.')" 
-                    oninput="this.setCustomValidity('')">
+                    name="nights">
                 <select 
                     class="fields-margin" 
                     name="adults" 
@@ -74,7 +69,6 @@
                     <label for="suite">Suite</label>
                 </div>
             </section> 
-            
             <section class="radio-section">
                 <label for="bed_type" style="margin-right: 0.4em;">Bed type:</label> 
                 <div>   
@@ -84,11 +78,7 @@
                     <label for="double_double">Double Double</label><br>
                 </div>             
             </section>
-            <label><input type="checkbox" id="smoking" value="Smoking"> Smoking</label><br>
-                
-                
-                
-                
+            <label><input type="checkbox" id="smoking" value="Smoking"> Smoking</label><br>      
         </fieldset>
         <fieldset class="fieldset-styles">
             <legend class="fieldset-legend">Contact Information:</legend>
@@ -97,7 +87,6 @@
                 <label class="fields-margin" for="email">Email:</label>
                 <label class="fields-margin" for="phone">Phone:</label>
             </section>
-
             <section class="input-section" >
                 <input 
                     class="fields-margin"
@@ -105,32 +94,26 @@
                     id="name" 
                     name="name" 
                     value="" 
-                    required
-                    oninvalid="this.setCustomValidity('Name is required.')"> <!-- oninput="this.setCustomValidity('')"><br> -->
-                
+                    required>
                 <input
                     class="fields-margin"
                     type="email" 
                     id="email" 
                     name="email" 
-                    value="graceyahoo.com"
-                    oninvalid="this.setCustomValidity('Email address is invalid.')"><!--  oninput="this.setCustomValidity('')"><br> -->
-                
+                    value="graceyahoo.com">
                 <input 
                     class="fields-margin"
                     type="text" 
                     id="phone" 
                     name="phone" 
                     value="123-456-789" 
-                    pattern="[0-9]+"
-                    oninvalid="this.setCustomValidity('Phone number is invalid.')"><!-- oninput="this.setCustomValidity('')"><br> -->
+                    pattern="[0-9]+">
             </section>
-            
-            
         </fieldset>
         <br>
-        <input type="submit" value="Submit Reservation" onclick="submit()">
-        <input type="submit" value="Clear">
+        <input type="submit" value="Submit Reservation">
+        <input type="reset" value="Clear">
+        
       </form>
 </body>
 </html>
