@@ -2,14 +2,13 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href="myStyles.css">
-    <script src="myScript.js"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
-    <form class="form-box">
+    <form id="form" class="form-box" >
         <h1>Reservation Request</h1>
         <fieldset class="fieldset-styles">
             <legend class="fieldset-legend">General Information:</legend>
@@ -84,7 +83,9 @@
                     <label for="double_double">Double Double</label><br>
                 </div>             
             </section>
-            <label><input type="checkbox" id="smoking" value="Smoking"> Smoking</label><br>      
+                <input type="checkbox" id="smoking" name="smoking" checked="false">
+                <label for="smoking"> Smoking</label><br>
+               
         </fieldset>
         <fieldset class="fieldset-styles">
             <legend class="fieldset-legend">Contact Information:</legend>
@@ -110,41 +111,40 @@
                     value=""
                     placeholder="graceyahoo.com">
                 <input 
-                    type="tel" 
+                    type="number" 
                     id="phone" 
                     name="phone" 
-                    pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
-                    required
-                    value=""
-                    placeholder="74701750">
+                    maxlength="8"
+                    required>
             </section>
         </fieldset>
         <br>
         <input type="submit" value="Submit Reservation">
         <input type="reset" value="Clear">
-      </form>
+    </form>
       <br>
-      <hr>
+        <hr>
       <br>
-      <table >
-        <tr>
-            <th colspan="4">General Information</th>
-            <th colspan="3">Preferences</th>
-            <th colspan="3">Contact Information</th>
-            <th>Actions</th>
-        </tr>
-        <tr>
-            <th>Arrival date</th>
-            <th>Nights</th>
-            <th>Adults</th>
-            <th>children</th>
-            <th>Room type</th>
-            <th>Bed type</th>
-            <th>Smoking</th>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Phone</th>
-        </tr>
-      </table>
+        <table >
+            <tr>
+                <th colspan="4">General Information</th>
+                <th colspan="3">Preferences</th>
+                <th colspan="3">Contact Information</th>
+                <th>Actions</th>
+            </tr>
+            <tr>
+                <th>Arrival date</th>
+                <th>Nights</th>
+                <th>Adults</th>
+                <th>children</th>
+                <th>Room type</th>
+                <th>Bed type</th>
+                <th>Smoking</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+            </tr>
+        </table>
 </body>
+<script src="myScript.js"></script>
 </html>
