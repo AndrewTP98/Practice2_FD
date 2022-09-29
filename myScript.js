@@ -1,9 +1,9 @@
-console.log(localStorage)
 renderReservatios()
 const form = document.getElementById("form");
 var myData = [];
 let idIndex = 0; 
 let ableToSmoke ;
+
 form.addEventListener("submit", function(e) {
     e.preventDefault();
     const data = new FormData(form);
