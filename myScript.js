@@ -1,4 +1,5 @@
-localStorage.clear();
+console.log(localStorage)
+renderReservatios()
 const form = document.getElementById("form");
 var myData = [];
 let idIndex = 0; 
@@ -17,34 +18,43 @@ form.addEventListener("submit", function(e) {
     }
     const obj = arrayToObj(myData);
     saveOnLocalStorage(obj); 
-    renderNewReservation(obj);
+    renderReservatios();
     form.reset();
     
 })
 
-function renderNewReservation(obj){
+function renderReservatios(){
+    const indexIdsSaved = parseInt(localStorage.getItem("idIndex"))
+    const table = document.getElementById("itemsList");
+    table.innerHTML = ''
+    for(let i=0; i<=indexIdsSaved; i++){
+        const obj = JSON.parse(localStorage.getItem("id"+i.toString()));
+        if(obj != null)
+        {
+            let newRow = "";
+            const id = "\'id" + i.toString() +"\'" ;
+            if(obj.smoking === "true")
+            {        
+                newRow = "<tr><td>"+obj.arrivalDate+"</td><td>"+obj.nights+"</td><td>"+obj.adults+"</td><td>"+obj.children+"</td><td>"+obj.roomType+"</td><td>"+obj.bedType+"</td><td><img src=\"/assets/images/Smoke.png\"</img></td><td>"+obj.name+"</td><td>"+obj.email+"</td><td>"+obj.phone+"</td><td><a href=\"#\" onclick=\"removeReservation(" + id + ")\">Remove</a></td></tr>";
+            }else
+            {
+                newRow = "<tr><td>"+obj.arrivalDate+"</td><td>"+obj.nights+"</td><td>"+obj.adults+"</td><td>"+obj.children+"</td><td>"+obj.roomType+"</td><td>"+obj.bedType+"</td><td><img src=\"/assets/images/noSmoke.png\"</img></td><td>"+obj.name+"</td><td>"+obj.email+"</td><td>"+obj.phone+"</td><td><a href=\"#\" onclick=\"removeReservation(" + id + ")\">Remove</a></td></tr>";
+            }
+            let btn = document.createElement("TR");
+            btn.innerHTML=newRow;
+            btn.setAttribute("id","id" + i.toString());
+            document.getElementById("itemsList").appendChild(btn);
+        }
 
-    let newRow = "";
-    const id = "\'id" + (idIndex-1).toString() +"\'" ;
-    if(obj.smoking === "true")
-    {        
-        newRow = "<tr><td>"+obj.arrivalDate+"</td><td>"+obj.nights+"</td><td>"+obj.adults+"</td><td>"+obj.children+"</td><td>"+obj.roomType+"</td><td>"+obj.bedType+"</td><td><img src=\"/assets/images/Smoke.png\"</img></td><td>"+obj.name+"</td><td>"+obj.email+"</td><td>"+obj.phone+"</td><td><a href=\"#\" onclick=\"removeReservation(" + id + ")\">Remove</a></td></tr>";
-    }else
-    {
-        newRow = "<tr><td>"+obj.arrivalDate+"</td><td>"+obj.nights+"</td><td>"+obj.adults+"</td><td>"+obj.children+"</td><td>"+obj.roomType+"</td><td>"+obj.bedType+"</td><td><img src=\"/assets/images/noSmoke.png\"</img></td><td>"+obj.name+"</td><td>"+obj.email+"</td><td>"+obj.phone+"</td><td><a href=\"#\" onclick=\"removeReservation(" + id + ")\">Remove</a></td></tr>";
     }
-    let btn = document.createElement("TR");
-   	btn.innerHTML=newRow;
-    btn.setAttribute("id","id" + (idIndex-1).toString());
-    document.getElementById("itemsList").appendChild(btn);
 }
+
 
 function removeReservation(id){
     if (window.confirm("Are you sure you want to remove the reservation?")) {
         localStorage.removeItem(id);
-    document.getElementById(id).outerHTML = "";
     }
-    
+    renderReservatios()
 }
 
 function arrayToObj(array){
