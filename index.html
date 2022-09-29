@@ -30,12 +30,12 @@
                     type="number" 
                     id="nights" 
                     name="nights"
+                    value="1"
                     min="1">
                 <select 
                     class="fields-margin" 
                     name="adults" 
                     id="adults">
-                    <option value="0">0</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -83,8 +83,11 @@
                     <label for="double_double">Double Double</label><br>
                 </div>             
             </section>
-                <input type="checkbox" id="smoking" name="smoking" checked="false">
+            <section>
+                <input type="checkbox" id="smoking" name="smoking" value="true">
                 <label for="smoking"> Smoking</label><br>
+            </section>
+                
                
         </fieldset>
         <fieldset class="fieldset-styles">
@@ -111,7 +114,7 @@
                     value=""
                     placeholder="graceyahoo.com">
                 <input 
-                    type="number" 
+                    type="tel" 
                     id="phone" 
                     name="phone" 
                     maxlength="8"
@@ -125,25 +128,29 @@
       <br>
         <hr>
       <br>
-        <table >
-            <tr>
-                <th colspan="4">General Information</th>
-                <th colspan="3">Preferences</th>
-                <th colspan="3">Contact Information</th>
-                <th>Actions</th>
-            </tr>
-            <tr>
-                <th>Arrival date</th>
-                <th>Nights</th>
-                <th>Adults</th>
-                <th>children</th>
-                <th>Room type</th>
-                <th>Bed type</th>
-                <th>Smoking</th>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Phone</th>
-            </tr>
+        <table style="margin: auto;">
+            <thead>
+                <tr>
+                    <th colspan="4">General Information</th>
+                    <th colspan="3">Preferences</th>
+                    <th colspan="3">Contact Information</th>
+                    <th rowspan="2">Actions</th>
+                </tr>
+                <tr id="trHead">
+                    <th>Arrival date</th>
+                    <th>Nights</th>
+                    <th>Adults</th>
+                    <th>children</th>
+                    <th>Room type</th>
+                    <th>Bed type</th>
+                    <th>Smoking</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                </tr>
+            </thead>
+            <tbody id="itemsList">
+            </tbody>           
         </table>
 </body>
 <script src="myScript.js"></script>
